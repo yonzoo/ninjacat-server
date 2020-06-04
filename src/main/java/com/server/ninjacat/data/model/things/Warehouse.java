@@ -22,7 +22,7 @@ public class Warehouse {
   @Column(name = "amount")
   private Integer amount;
 
-  @OneToMany(mappedBy = "warehouse", fetch = FetchType.EAGER)
+  @OneToMany(mappedBy = "warehouse", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
   private Set<Sale> sales;
 
   public Warehouse() {
